@@ -27,6 +27,8 @@ allow vrcore_app app_api_service:service_manager find;
 
 # VrCore-specific services.
 allow vrcore_app vr_manager_service:service_manager find;
+allow vrcore_app vr_hwc_service:service_manager find;
+allow vrcore_app virtual_touchpad_service:service_manager find;
 
 # gdbserver for ndk-gdb ptrace attaches to app process.
 allow vrcore_app self:process ptrace;

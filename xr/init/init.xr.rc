@@ -19,6 +19,7 @@ on init
     # TODO(b/131327495): Re-enable this once VrHeadsetPowerPolicyService or its
     #                    equivalent lands in Android master.
     setprop ro.boot.vr 0
+    setprop ro.surface_flinger.use_vr_flinger 1
 
     # Setup cpusets used by the VR services.
     mkdir /dev/cpuset/kernel 0750 root system

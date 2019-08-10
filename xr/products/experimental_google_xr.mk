@@ -1,5 +1,5 @@
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.dvr.lens_metrics=vendor/etc/hmd_config
+    ro.dvr.lens_metrics=/etc/hmd_config
 
 # SELinux permissions
 BOARD_SEPOLICY_DIRS += device/google/vrservices/xr/sepolicy
@@ -33,9 +33,10 @@ PRODUCT_PROPERTY_OVERRIDES += ro.vendor.camera.external.hal3TrebleMinorVersion=5
 PRODUCT_PACKAGES += NonXrProductPackagesRemover
 
 PRODUCT_COPY_FILES += \
-    vendor/unbundled_google/packages/PrebuiltGoogleVr/configs/daydream_viewer_config:$(TARGET_COPY_OUT_VENDOR)/etc/hmd_config \
-    vendor/unbundled_google/packages/PrebuiltGoogleVr/scripts/boot-to-vr.sh:$(TARGET_COPY_OUT_VENDOR)/bin/boot-to-vr.sh \
     device/google/vrservices/xr/init/init.xr.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.xr.rc \
+    frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.vr.high_performance.xml \
+    vendor/unbundled_google/packages/PrebuiltGoogleVr/configs/daydream_viewer_config:$(TARGET_COPY_OUT_SYSTEM)/etc/hmd_config \
+    vendor/unbundled_google/packages/PrebuiltGoogleVr/scripts/boot-to-vr.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/boot-to-vr.sh \
 
 # XR/VR prebuilt packages
 PRODUCT_PACKAGES += \

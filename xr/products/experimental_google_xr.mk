@@ -2,7 +2,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.dvr.lens_metrics=/etc/hmd_config
 
 # SELinux permissions
-BOARD_SEPOLICY_DIRS += device/google/vrservices/xr/sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR := device/google/vrservices/xr/sepolicy
 
 # Remove non-critical and non-XR packages from PRODUCT_PACKAGES.
 #

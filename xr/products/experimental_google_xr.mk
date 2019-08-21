@@ -2,7 +2,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.dvr.lens_metrics=/etc/hmd_config
 
 # SELinux permissions
-BOARD_SEPOLICY_DIRS += device/google/vrservices/xr/sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR := device/google/vrservices/xr/sepolicy
 
 # Remove non-critical and non-XR packages from PRODUCT_PACKAGES.
 #
@@ -34,9 +34,9 @@ PRODUCT_PACKAGES += NonXrProductPackagesRemover
 
 PRODUCT_COPY_FILES += \
     device/google/vrservices/xr/init/init.xr.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.xr.rc \
+    device/google/vrservices/xr/scripts/boot-to-vr.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/boot-to-vr.sh \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.vr.high_performance.xml \
     vendor/unbundled_google/packages/PrebuiltGoogleVr/configs/daydream_viewer_config:$(TARGET_COPY_OUT_SYSTEM)/etc/hmd_config \
-    vendor/unbundled_google/packages/PrebuiltGoogleVr/scripts/boot-to-vr.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/boot-to-vr.sh \
 
 # XR/VR prebuilt packages
 PRODUCT_PACKAGES += \

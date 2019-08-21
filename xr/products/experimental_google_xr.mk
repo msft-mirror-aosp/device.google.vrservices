@@ -45,4 +45,5 @@ PRODUCT_PACKAGES += \
     VrInputMethodIme \
     VrHeadsetPowerPolicy \
     pps-tool.sh \
+    BluetoothQtiSymlink \
 

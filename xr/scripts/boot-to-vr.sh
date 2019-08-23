@@ -2,6 +2,7 @@
 # This script finds the init.rc file for a certain Pixel XR device and updates
 # the value of ro.boot.vr being set during the init process.
 #
+SYSTEM_INIT_XR_RC_FILE="/system/etc/init/init.xr.rc"
 PROP_RO_HARDWARE="$(getprop ro.hardware)"
 PROP_RO_BOOT_HARDWARE_PLATFORM="$(getprop ro.boot.hardware.platform)"
 PROP_RO_PRODUCT_NAME="$(getprop ro.product.name)"
@@ -24,7 +25,11 @@ function get_hardware_name() {
 }
 
 function get_init_rc_file() {
-  echo "/vendor/etc/init/hw/init.$(get_hardware_name).rc"
+  if [ -f $SYSTEM_INIT_XR_RC_FILE ]; then
+    echo $SYSTEM_INIT_XR_RC_FILE
+  else
+    echo "/vendor/etc/init/hw/init.$(get_hardware_name).rc"
+  fi
 }
 
 function print_init_rc() {

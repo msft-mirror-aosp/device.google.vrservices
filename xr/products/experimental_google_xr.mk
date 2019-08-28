@@ -41,6 +41,7 @@ PRODUCT_COPY_FILES += \
 # XR/VR prebuilt packages
 PRODUCT_PACKAGES += \
     SetupWizardOverlay \
+    SetupWizardOverlayXr \
     VrHome \
     VrInputMethodIme \
     VrHeadsetPowerPolicy \

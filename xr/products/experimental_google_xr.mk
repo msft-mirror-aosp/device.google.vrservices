@@ -32,6 +32,8 @@ PRODUCT_PROPERTY_OVERRIDES += ro.vendor.camera.external.hal3TrebleMinorVersion=5
 
 PRODUCT_PACKAGES += NonXrProductPackagesRemover
 
+PRODUCT_PACKAGE_OVERLAYS := device/google/vrservices/xr/overlay
+
 PRODUCT_COPY_FILES += \
     device/google/vrservices/xr/init/init.xr.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.xr.rc \
     device/google/vrservices/xr/scripts/boot-to-vr.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/boot-to-vr.sh \
